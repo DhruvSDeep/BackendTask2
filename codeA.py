@@ -11,7 +11,7 @@ dict = {}
 
 #creating dictionary
 for i in a:
-    vals = (r.get(f"https://pokeapi.co/api/v2/pokemon/{i}").json())
+    vals = (r.get(f"https://pokeapi.co/api/v2/pokemon/{i.rstrip()}").json())
 
     name = vals['name']
     idee = vals['id']
@@ -43,4 +43,5 @@ for i in a:
 oup = open("jason.json", "w+")
 json.dump(dict, oup, indent=4)
 oup.close()
+
 
